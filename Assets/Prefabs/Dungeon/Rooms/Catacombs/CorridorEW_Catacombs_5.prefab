@@ -9454,8 +9454,8 @@ GameObject:
   m_Component:
   - component: {fileID: 316384385408736750}
   - component: {fileID: 7061706898141806551}
-  - component: {fileID: -8250911255903073436}
-  - component: {fileID: -7353392848956170051}
+  - component: {fileID: -22545018016291036}
+  - component: {fileID: 7292246458748242702}
   m_Layer: 12
   m_Name: CorridorEW_Catacombs_5
   m_TagString: Untagged
@@ -9505,7 +9505,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 31, y: 24}
   m_EdgeRadius: 0
---- !u!114 &-8250911255903073436
+--- !u!114 &-22545018016291036
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9527,8 +9527,9 @@ MonoBehaviour:
   roomColliderBounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
+  moveableItemsList: []
   environmentGameObject: {fileID: 7881035549861721104}
---- !u!114 &-7353392848956170051
+--- !u!114 &7292246458748242702
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

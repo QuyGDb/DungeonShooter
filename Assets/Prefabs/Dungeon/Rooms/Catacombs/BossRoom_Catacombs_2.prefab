@@ -18549,8 +18549,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8227588318318580144}
   - component: {fileID: 1462120759972737929}
-  - component: {fileID: 6916621616584765187}
-  - component: {fileID: 6501374903909625784}
+  - component: {fileID: -2472557400590319502}
+  - component: {fileID: 5579604650550660939}
   m_Layer: 12
   m_Name: BossRoom_Catacombs_2
   m_TagString: Untagged
@@ -18600,7 +18600,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 47, y: 41}
   m_EdgeRadius: 0
---- !u!114 &6916621616584765187
+--- !u!114 &-2472557400590319502
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -18622,8 +18622,9 @@ MonoBehaviour:
   roomColliderBounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
+  moveableItemsList: []
   environmentGameObject: {fileID: 2317068385254769796}
---- !u!114 &6501374903909625784
+--- !u!114 &5579604650550660939
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

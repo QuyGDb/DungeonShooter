@@ -13516,8 +13516,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8227588318318580144}
   - component: {fileID: 1462120759972737929}
-  - component: {fileID: -4773514539797739203}
-  - component: {fileID: -8446375893786963010}
+  - component: {fileID: -71888400407097466}
+  - component: {fileID: 8984960481853740643}
   m_Layer: 12
   m_Name: MediumRoom_Catacombs_3
   m_TagString: Untagged
@@ -13567,7 +13567,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 43, y: 34}
   m_EdgeRadius: 0
---- !u!114 &-4773514539797739203
+--- !u!114 &-71888400407097466
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -13589,8 +13589,9 @@ MonoBehaviour:
   roomColliderBounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
+  moveableItemsList: []
   environmentGameObject: {fileID: 2317068385254769796}
---- !u!114 &-8446375893786963010
+--- !u!114 &8984960481853740643
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
