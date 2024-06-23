@@ -483,29 +483,29 @@ public class InstantiatedRoom : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// This is used for debugging - shows the position of the table obstacles. 
-    /// (MUST BE COMMENTED OUT BEFORE UPDATING ROOM PREFABS)
-    /// </summary>
-    private void OnDrawGizmos()
-    {
-        ;
-        for (int i = 0; i < (room.templateUpperBounds.x - room.templateLowerBounds.x + 1); i++)
-        {
+    ///// <summary>
+    ///// This is used for debugging - shows the position of the table obstacles. 
+    ///// (MUST BE COMMENTED OUT BEFORE UPDATING ROOM PREFABS)
+    ///// </summary>
+    //private void OnDrawGizmos()
+    //{
+    //    ;
+    //    for (int i = 0; i < (room.templateUpperBounds.x - room.templateLowerBounds.x + 1); i++)
+    //    {
 
-            for (int j = 0; j < (room.templateUpperBounds.y - room.templateLowerBounds.y + 1); j++)
-            {
+    //        for (int j = 0; j < (room.templateUpperBounds.y - room.templateLowerBounds.y + 1); j++)
+    //        {
 
-                if (aStarItemObstacles[i, j] == 0)
-                {
-                    Vector3 worldCellPos = grid.CellToWorld(new Vector3Int(i + room.templateLowerBounds.x, j + room.templateLowerBounds.y, 0));
+    //            if (aStarItemObstacles[i, j] == 0)
+    //            {
+    //                Vector3 worldCellPos = grid.CellToWorld(new Vector3Int(i + room.templateLowerBounds.x, j + room.templateLowerBounds.y, 0));
 
-                    Gizmos.DrawWireCube(new Vector3(worldCellPos.x + 0.5f, worldCellPos.y + 0.5f, 0), Vector3.one);
-                }
-            }
-        }
+    //                Gizmos.DrawWireCube(new Vector3(worldCellPos.x + 0.5f, worldCellPos.y + 0.5f, 0), Vector3.one);
+    //            }
+    //        }
+    //    }
 
-    }
+    //}
 
 
     #region Validation

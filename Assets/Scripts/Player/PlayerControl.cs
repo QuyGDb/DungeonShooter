@@ -89,6 +89,9 @@ public class PlayerControl : MonoBehaviour
         // Process the player weapon input
         WeaponInput();
 
+        // Process player use item input
+        UseItemInput();
+
         // Player roll cooldown timer
         PlayerRollCooldownTimer();
     }
@@ -367,6 +370,25 @@ public class PlayerControl : MonoBehaviour
 
     }
 
+    private void UseItemInput()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            float useItemRadius = 2f;
+
+            Collider2D[] collider2DArray = Physics2D.OverlapCircleAll(player.GetPlayerPosition(), useItemRadius);
+
+            foreach (Collider2D collider2D in collider2DArray)
+            {
+                IUseable useable = collider2D.GetComponent<IUseable>();
+
+                if (useable != null)
+                {
+                    useable.UseItem();
+                }
+            }
+        }
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // if collided with something stop player roll coroutine

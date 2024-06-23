@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-1971708149572813114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3649464903898993141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e96f766e0adb3149b2adb6a37928a36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemMass: 8
 --- !u!1001 &3328896108467584497
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7,6 +20,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7861095384196392054, guid: 9b182eb75b6b414489195a0e25f0f84d, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: b066303e52b20704cbd150ed9810ece7, type: 2}
     - target: {fileID: -2233995187343518598, guid: 9b182eb75b6b414489195a0e25f0f84d, type: 3}
       propertyPath: m_Size.y
       value: 2.2
@@ -67,6 +84,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoondenTableVertical
       objectReference: {fileID: 0}
+    - target: {fileID: 2978433097857581516, guid: 9b182eb75b6b414489195a0e25f0f84d, type: 3}
+      propertyPath: m_Mass
+      value: 99999
+      objectReference: {fileID: 0}
     - target: {fileID: 5019172256588730506, guid: 9b182eb75b6b414489195a0e25f0f84d, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -113,3 +134,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b182eb75b6b414489195a0e25f0f84d, type: 3}
+--- !u!1 &3649464903898993141 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2060147931977378820, guid: 9b182eb75b6b414489195a0e25f0f84d, type: 3}
+  m_PrefabInstance: {fileID: 3328896108467584497}
+  m_PrefabAsset: {fileID: 0}

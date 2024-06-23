@@ -39,25 +39,29 @@ public class Ammo : MonoBehaviour, IFireable
             isAmmoMaterialSet = true;
         }
 
-        // Calculate distance vector to move ammo
-        Vector3 distanceVector = fireDirectionVector * ammoSpeed * Time.deltaTime;
-
-        transform.position += distanceVector;
-
-        // Disable after max range reached
-        ammoRange -= distanceVector.magnitude;
-
-        if (ammoRange < 0f)
+        if (!overrideAmmoMovement)
         {
-            if (ammoDetails.isPlayerAmmo)
+
+            // Calculate distance vector to move ammo
+            Vector3 distanceVector = fireDirectionVector * ammoSpeed * Time.deltaTime;
+
+            transform.position += distanceVector;
+
+            // Disable after max range reached
+            ammoRange -= distanceVector.magnitude;
+
+            if (ammoRange < 0f)
             {
-                // no multiplier
-                StaticEventHandler.CallMultiplierEvent(false);
+                if (ammoDetails.isPlayerAmmo)
+                {
+                    // no multiplier
+                    StaticEventHandler.CallMultiplierEvent(false);
+                }
+
+                DisableAmmo();
             }
 
-            DisableAmmo();
         }
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -254,6 +258,7 @@ public class Ammo : MonoBehaviour, IFireable
     {
         return gameObject;
     }
+
 
     #region Validation
 #if UNITY_EDITOR
