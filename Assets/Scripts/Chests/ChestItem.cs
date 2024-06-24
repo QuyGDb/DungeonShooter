@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -13,12 +12,14 @@ public class ChestItem : MonoBehaviour
 
     private void Awake()
     {
-        // Load components
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         textTMP = GetComponentInChildren<TextMeshPro>();
         materializeEffect = GetComponent<MaterializeEffect>();
     }
 
+    /// <summary>
+    /// Initialize the chest item
+    /// </summary>
     public void Initialize(Sprite sprite, string text, Vector3 spawnPosition, Color materializeColor)
     {
         spriteRenderer.sprite = sprite;
@@ -40,4 +41,5 @@ public class ChestItem : MonoBehaviour
 
         textTMP.text = text;
     }
+
 }

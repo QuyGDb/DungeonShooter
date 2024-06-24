@@ -184,7 +184,7 @@ public class Player : MonoBehaviour
     {
         foreach (Weapon weapon in weaponList)
         {
-            if (weapon.weaponDetails = weaponDetails) return true;
+            if (weapon.weaponDetails == weaponDetails) return true;
         }
 
         return false;

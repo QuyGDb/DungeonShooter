@@ -136,7 +136,14 @@ public class GameResources : MonoBehaviour
     [Tooltip("Populate with bullet icon sprite")]
     #endregion
     public Sprite bulletIcon;
-
+    #region Header MINIMAP
+    [Space(10)]
+    [Header("MINIMAP")]
+    #endregion
+    #region Tooltip
+    [Tooltip("Minimap skull prefab")]
+    #endregion
+    public GameObject minimapSkullPrefab;
     #region Validation
 #if UNITY_EDITOR
     // Validate the scriptable object details entered
@@ -162,6 +169,7 @@ public class GameResources : MonoBehaviour
         HelperUtilities.ValidateCheckNullValue(this, nameof(chestItemPrefab), chestItemPrefab);
         HelperUtilities.ValidateCheckNullValue(this, nameof(heartIcon), heartIcon);
         HelperUtilities.ValidateCheckNullValue(this, nameof(bulletIcon), bulletIcon);
+        HelperUtilities.ValidateCheckNullValue(this, nameof(minimapSkullPrefab), minimapSkullPrefab);
     }
 
 #endif

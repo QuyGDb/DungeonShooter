@@ -55,6 +55,7 @@ public class GameManager : SingletonMonobehaviour<GameManager>
     private long gameScore;
     private int scoreMultiplier;
     private InstantiatedRoom bossRoom;
+    private bool isFading = false;
 
     protected override void Awake()
     {
@@ -227,6 +228,25 @@ public class GameManager : SingletonMonobehaviour<GameManager>
                 RoomEnemiesDefeated();
 
                 break;
+            case GameState.playingLevel:
+                if (Input.GetKeyDown(KeyCode.Tab))
+                {
+                    DisplayDungeonOverviewMap();
+                }
+                break;
+            case GameState.dungeonOverviewMap:
+                if (Input.GetKeyDown(KeyCode.Tab))
+                {
+                    DungeonMap.Instance.ClearDungeonOverViewMap();
+                }
+                break;
+            case GameState.bossStage:
+
+                if (Input.GetKeyDown(KeyCode.Tab))
+                {
+                    DisplayDungeonOverviewMap();
+                }
+                break;
 
             // handle the level being completed
             case GameState.levelCompleted:
@@ -329,6 +349,16 @@ public class GameManager : SingletonMonobehaviour<GameManager>
 
     }
 
+    private void DisplayDungeonOverviewMap()
+    {
+        // return if fading
+        if (isFading)
+        {
+            return;
+        }
+        // Display dungeonOverviewMap
+        DungeonMap.Instance.DisplayDungeoOverViewMap();
+    }
     private void PlayDungeonLevel(int dungeonLevelListIndex)
     {
         // Build dungeon for level
@@ -477,6 +507,7 @@ public class GameManager : SingletonMonobehaviour<GameManager>
     /// </summary>
     public IEnumerator Fade(float startFadeAlpha, float targetFadeAlpha, float fadeSeconds, Color backgroundColor)
     {
+        isFading = true;
         Image image = canvasGroup.GetComponent<Image>();
         image.color = backgroundColor;
 
@@ -489,6 +520,7 @@ public class GameManager : SingletonMonobehaviour<GameManager>
             yield return null;
         }
 
+        isFading = false;
     }
 
 

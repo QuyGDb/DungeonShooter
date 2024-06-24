@@ -27,7 +27,7 @@ public class Chest : MonoBehaviour, IUseable
     private SpriteRenderer spriteRenderer;
     private MaterializeEffect materializeEffect;
     private bool isEnabled = false;
-    private ChestState ChestState = ChestState.closed;
+    private ChestState chestState = ChestState.closed;
     private GameObject chestItemGameObject;
     private ChestItem chestItem;
     private TextMeshPro messageTextTMP;
@@ -85,7 +85,7 @@ public class Chest : MonoBehaviour, IUseable
     {
         if (!enabled) return;
 
-        switch (ChestState)
+        switch (chestState)
         {
             case ChestState.closed:
                 OpenChest();
@@ -100,9 +100,9 @@ public class Chest : MonoBehaviour, IUseable
                 CollectWeaponItem();
                 break;
             case ChestState.empty:
-                break;
+                return;
             default:
-                break;
+                return;
         }
     }
 
@@ -128,24 +128,24 @@ public class Chest : MonoBehaviour, IUseable
 
     private void UpdateChestState()
     {
-        if (healthPercent > 0)
+        if (healthPercent != 0)
         {
-            ChestState = ChestState.healthItem;
+            chestState = ChestState.healthItem;
             InstantiateHealthItem();
         }
         else if (ammoPercent != 0)
         {
-            ChestState = ChestState.ammoItem;
+            chestState = ChestState.ammoItem;
             InstantiateAmmoItem();
         }
         else if (weaponDetails != null)
         {
-            ChestState = ChestState.weaponItem;
+            chestState = ChestState.weaponItem;
             InstantiateWeaponItem();
         }
         else
         {
-            ChestState = ChestState.empty;
+            chestState = ChestState.empty;
         }
     }
 
@@ -221,7 +221,7 @@ public class Chest : MonoBehaviour, IUseable
         }
         else
         {
-            StartCoroutine(DisplayMessage("WEAPON\nALRADY\nREQUIPPED", 5f));
+            StartCoroutine(DisplayMessage("WEAPON\nALREADY\nEQUIPPED", 5f));
         }
         weaponDetails = null;
 
