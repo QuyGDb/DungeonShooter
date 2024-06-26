@@ -29,7 +29,22 @@ public class GameResources : MonoBehaviour
     #endregion
 
     public RoomNodeTypeListSO roomNodeTypeList;
-
+    #region PLAYER SELECTION
+    [Space(10)]
+    [Header("PLAYER SELECTION")]
+    #endregion
+    #region Tooltip
+    [Tooltip("The PlayerSelection prefab")]
+    #endregion Tooltip
+    public GameObject playerSelectionPrefab;
+    #region Header PLAYER
+    [Space(10)]
+    [Header("PLAYER")]
+    #endregion
+    #region Tooltip
+    [Tooltip("Player details list - populate the list with the playerdetails scriptable objects")]
+    #endregion Tooltip
+    public List<PlayerDetailsSO> playerDetailsList;
     #region Header PLAYER
     [Space(10)]
     [Header("PLAYER")]
@@ -38,6 +53,31 @@ public class GameResources : MonoBehaviour
     [Tooltip("The current player scriptable object - this is used to reference the current player between scenes")]
     #endregion Tooltip
     public CurrentPlayerSO currentPlayer;
+
+    #region Header MUSIC
+    [Space(10)]
+    [Header("MUSIC")]
+    #endregion Header
+    #region Tooltip
+    [Tooltip("Populate with the music master mixer group")]
+    #endregion
+    public AudioMixerGroup musicMasterMixerGroup;
+    #region Tooltip
+    [Tooltip("Main menu music scriptable object")]
+    #endregion Tooltip
+    public MusicTrackSO mainMenuMusic;
+    #region Tooltip
+    [Tooltip("music on full snapshot")]
+    #endregion Tooltip
+    public AudioMixerSnapshot musicOnFullSnapshot;
+    #region Tooltip
+    [Tooltip("music low snapshot")]
+    #endregion Tooltip
+    public AudioMixerSnapshot musicLowSnapshot;
+    #region Tooltip
+    [Tooltip("music off snapshot")]
+    #endregion Tooltip
+    public AudioMixerSnapshot musicOffSnapshot;
 
     #region Header SOUNDS
     [Space(10)]
@@ -119,6 +159,11 @@ public class GameResources : MonoBehaviour
     [Tooltip("Populate with ammo icon prefab")]
     #endregion
     public GameObject ammoIconPrefab;
+
+    #region Tooltip
+    [Tooltip("The score prefab")]
+    #endregion
+    public GameObject scorePrefab;
 
     #region Header CHESTS
     [Space(10)]
